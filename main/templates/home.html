@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Proxy</title>
+</head>
+<body>
+    <p>A mini application to get proxy</p>
+    <ul>
+        {% if proxies %}
+            {% for proxy in proxies %}
+                <li>{{ proxy }}</li>
+            {% endfor %}
+        {% else %}
+            <p>Not found! Refresh!!!</p>
+        {% endif %}
+    </ul>
+</body>
+</html>
