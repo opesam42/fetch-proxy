@@ -7,6 +7,14 @@
 </head>
 <body>
     <p>A mini application to get proxy</p>
-    <a href="{{ url_for('pages.proxy') }}">Get Proxy List</a>
+    <ul>
+        {% if proxies %}
+            {% for proxy in proxies %}
+                <li>{{ proxy }}</li>
+            {% endfor %}
+        {% else %}
+            <p>Not found! Refresh!!!</p>
+        {% endif %}
+    </ul>
 </body>
 </html>
