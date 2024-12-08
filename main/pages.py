@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
-from main.get_proxy import scraper
+# from main.get_proxy import scraper
+from main.getproxy import scraper
 import asyncio
 
 bp = Blueprint("pages", __name__)
@@ -10,7 +11,8 @@ def home():
 
 @bp.route('/proxy')
 def proxy():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    proxies = loop.run_until_complete(scraper()) 
+    # loop = asyncio.new_event_loop()
+    # asyncio.set_event_loop(loop)
+    # proxies = loop.run_until_complete(scraper()) 
+    proxies = scraper()
     return render_template('proxy.html', proxies=proxies)
